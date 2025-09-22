@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -46,11 +47,12 @@
       margin-bottom: 2rem;
     }
 
-    .btn-group {
+    .Guziki {
       display: flex;
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 1.5rem;
     }
 
     .overlay button, .projects button {
@@ -69,14 +71,30 @@
       color: #000;
     }
 
-    
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 1.8rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #1da1f2; 
+      transform: scale(1.2);
+    }
+
     .projects {
       display: none;
       margin-top: 2rem;
       animation: fadeIn 0.5s ease forwards;
     }
 
-    
     .about {
       display: none;
       animation: fadeIn 0.5s ease forwards;
@@ -94,25 +112,29 @@
       <h1>Leonard Fidelus</h1>
       <p>Frontend Developer</p>
 
-      <div class="btn-group">
-        <button id="showProjects">Check my Projects</button>
-        <button id="showAbout">About Me</button>
+      <div class="Guziki">
+        <button id="showProjects">Moje Projekty</button>
+        <button id="showAbout">O mnie</button>
       </div>
 
-      
+     
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:leonardfidelus@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/CenzurusS/MainWebsite" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
       <div class="projects" id="projectsContainer">
         <button>Projekt 1</button>
         <button>Projekt 2</button>
         <button>Projekt 3</button>
       </div>
 
-      
       <div class="about" id="aboutContainer">
         <h2>About Me</h2>
         <p>
-          Cześć! Mam na imię Leonard i zajmuję się frontendem.  
-          Uwielbiam budować nowoczesne, responsywne strony i aplikacje webowe.  
-          Moim celem jest łączyć estetykę z funkcjonalnością, tworząc coś, co jest zarówno ładne jak i użyteczne.
+          Cześć! Jestem Programistą
         </p>
       </div>
     </div>
@@ -124,13 +146,11 @@
     const projects = document.getElementById("projectsContainer");
     const about = document.getElementById("aboutContainer");
 
-    
     btnProjects.addEventListener("click", () => {
       about.style.display = "none"; 
       projects.style.display = (projects.style.display === "block") ? "none" : "block";
     });
 
-    
     btnAbout.addEventListener("click", () => {
       projects.style.display = "none"; 
       about.style.display = (about.style.display === "block") ? "none" : "block";
